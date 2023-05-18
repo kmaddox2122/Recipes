@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+  flex-direction: column;
+  /* margin: auto; */
+  place-items: center;
+  margin-top: 10rem;
+}
+
+.intro {
+  font-size: x-large;
+  margin: 2rem;
+}
+
+button {
+  background-color: rgb(23, 105, 105);
+  color: white;
+}
+
+.button{ 
+  color: white;
+}
