@@ -1,6 +1,18 @@
+.jumbotron {
+  background-color: var(--teal);
+  height: 8rem;
+}
+
+.jumbotron-title {
+  font-size: 8vw;
+  padding-top: 50px;
+  text-align: center;
+}
+
 .card {
   padding-top: 1rem;
   margin: auto;
+  margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -12,12 +24,18 @@
 .card-title {
   font-size: larger;
   text-decoration: underline;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .card-text {
   font-style: italic;
   text-align: center;
+}
+
+.toggle-button {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .list-heading {
@@ -34,4 +52,10 @@
 
 .recipe-link {
   text-align: center;
+}
+
+@media screen and (min-width:768px) {
+  .jumbotron-title {
+    font-size: 3.84rem;
+  }
 }

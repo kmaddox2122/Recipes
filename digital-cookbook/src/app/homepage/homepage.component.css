@@ -14,7 +14,7 @@
 }
 
 button {
-  background-color: rgb(23, 105, 105);
+  background-color: var(--teal);
   color: white;
 }
 
