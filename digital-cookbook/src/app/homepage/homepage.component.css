@@ -15,9 +15,6 @@
 
 button {
   background-color: var(--teal);
-  color: white;
+  color: white !important;
 }
 
-.button{ 
-  color: white;
-}

@@ -9,6 +9,18 @@
   text-align: center;
 }
 
+.dropdown {
+  float: right;
+}
+
+.dropdown-toggle {
+  font-size:medium
+}
+
+.dropdown-item:hover {
+  background-color: rgb(233, 240, 237);
+}
+
 .card {
   padding-top: 1rem;
   margin: auto;
@@ -38,6 +50,15 @@
   margin-bottom: 1rem;
 }
 
+.toggle-recipe-button {
+  border-radius: 8px;
+  background-color: rgb(233, 240, 237);
+}
+
+.toggle-recipe-button:hover {
+  background-color: rgb(146, 214, 214);
+}
+
 .list-heading {
   font-weight: bold;
   font-size: large;
@@ -59,3 +80,5 @@
     font-size: 3.84rem;
   }
 }
+
+

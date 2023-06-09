@@ -3,6 +3,17 @@
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4 jumbotron-title">Digital Cookbook</h1>
+
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Add a new recipe
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#">Upload from a link</a></li>
+          <li><a class="dropdown-item" href="#">Import from a file</a></li>
+          <li><a class="dropdown-item" href="#">Manually enter recipe</a></li>
+        </ul>
+      </div>      
     </div>
   </div>
   <div class="card" style="width: 18rem;">
@@ -18,8 +29,8 @@
       <p class="card-text">This is a great go-to meal -- easy to keep ingredients on hand, customize the recipe and it freezes well!</p>
     </div>
     <div class="toggle-button">
-      <button *ngIf="!isShown" (click)="toggleShowHide()" >View Full Recipe</button>
-      <button *ngIf="isShown" (click)="toggleShowHide()" >Hide Full Recipe</button>
+      <button class="toggle-recipe-button" *ngIf="!isShown" (click)="toggleShowHide()" >View Full Recipe</button>
+      <button class="toggle-recipe-button" *ngIf="isShown" (click)="toggleShowHide()" >Hide Full Recipe</button>
     </div>
     <ul *ngIf="isShown" class="list-group list-group-flush">
       <li class="list-group-item">
