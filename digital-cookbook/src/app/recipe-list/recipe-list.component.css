@@ -21,6 +21,10 @@
   background-color: rgb(233, 240, 237);
 }
 
+.modal .show {
+  display: block;
+}
+
 .card {
   padding-top: 1rem;
   margin: auto;

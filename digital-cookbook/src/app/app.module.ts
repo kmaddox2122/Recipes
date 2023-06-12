@@ -10,13 +10,15 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ManualRecipeComponent } from './manual-recipe/manual-recipe.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeListComponent,
-    HomepageComponent
+    HomepageComponent,
+    ManualRecipeComponent
   ],
   imports: [
     BrowserModule,

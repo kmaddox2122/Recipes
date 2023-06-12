@@ -1,5 +1,5 @@
 <div>
-
+<!-- navbar -->
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4 jumbotron-title">Digital Cookbook</h1>
@@ -11,11 +11,35 @@
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           <li><a class="dropdown-item" href="#">Upload from a link</a></li>
           <li><a class="dropdown-item" href="#">Import from a file</a></li>
-          <li><a class="dropdown-item" href="#">Manually enter recipe</a></li>
+          <li><a class="dropdown-item" data-toggle="modal" >Manually enter recipe</a></li>
         </ul>
       </div>      
     </div>
   </div>
+  <button #modalButton type="button" class="btn btn-primary" class="btn btn-primary" (click)="showModal=true">
+    Launch demo modal
+  </button>
+<!-- modal -->
+  <div class="modal fade" tabindex="-1" #manualRecipeModal id="manualRecipeModal" [ngClass]="{'show':showModal}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="showModal=false" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="save()">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="showModal=false">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- recipe cards -->
   <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="../../assets/chipotle-chicken-pasta.jpeg" alt="Card image cap">
     <!-- <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
