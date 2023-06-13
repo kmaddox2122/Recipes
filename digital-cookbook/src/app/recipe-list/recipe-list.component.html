@@ -13,13 +13,13 @@
             <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
           </svg> 
         </a>
-        <a *ngSwitchCase="Breakpoints.Medium"
+        <a *ngSwitchCase="Breakpoints.Medium || Breakpoints.XLarge"
        
         class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Add a new recipe        
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="#">Upload from a link</a></li>
+          <li><a class="dropdown-item" (click)="showChooseFileButton()" >Upload from a link</a></li>
           <li><a class="dropdown-item" href="#">Import from a file</a></li>
           <li><a class="dropdown-item" data-toggle="modal" routerLink="/manual-recipe">Manually enter recipe</a></li>
         </ul>
@@ -30,7 +30,7 @@
     Launch demo modal
   </button> -->
 <!-- modal -->
-  <div class="modal fade" tabindex="-1" #manualRecipeModal id="manualRecipeModal" [ngClass]="{'show':showModal}">
+  <!-- <div class="modal fade" tabindex="-1" #manualRecipeModal id="manualRecipeModal" [ngClass]="{'show':showModal}">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -48,7 +48,15 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+
+  <!-- Choose file -->
+  <form *ngIf="showChooseFile">
+    <div class="form-group">
+      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+  </form>
+
 <!-- recipe cards -->
   <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="../../assets/chipotle-chicken-pasta.jpeg" alt="Card image cap">

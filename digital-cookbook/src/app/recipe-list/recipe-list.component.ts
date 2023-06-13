@@ -19,7 +19,7 @@ export class RecipeListComponent implements OnInit {
   currentBreakpoint:string = '';
 
   readonly breakpoint$ = this.breakpointObserver
-    .observe([Breakpoints.Handset, Breakpoints.HandsetLandscape, Breakpoints.Medium])
+    .observe([Breakpoints.Handset, Breakpoints.HandsetLandscape, Breakpoints.Medium, Breakpoints.XLarge])
     .pipe(
       tap(value => console.log(value)),
       // distinctUntilChanged()
@@ -39,6 +39,8 @@ export class RecipeListComponent implements OnInit {
       this.currentBreakpoint = Breakpoints.HandsetLandscape;
     } else if(this.breakpointObserver.isMatched(Breakpoints.Medium)) {
       this.currentBreakpoint = Breakpoints.Medium;
+    } else if(this.breakpointObserver.isMatched(Breakpoints.XLarge)) {
+      this.currentBreakpoint = Breakpoints.XLarge;
     }
   }
 
@@ -62,5 +64,11 @@ export class RecipeListComponent implements OnInit {
   toggleShowHide() {
     this.isShown = !this.isShown;
   }
+
+  showChooseFile: boolean = false;
+
+  showChooseFileButton() {
+    this.showChooseFile = true;
+  } 
 
 }

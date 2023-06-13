@@ -25,6 +25,11 @@
   display: block;
 }
 
+.form-group {
+  display: flex;
+  justify-content: center;
+}
+
 .card {
   padding-top: 1rem;
   margin: auto;
