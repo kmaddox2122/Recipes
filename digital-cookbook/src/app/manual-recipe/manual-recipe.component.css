@@ -1,0 +1,39 @@
+
+/* mobile */
+
+.title {
+  font-size: min(7vw, 2rem);
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+
+.form-control {
+  margin-top: 1rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem;
+}
+
+.footer-button {
+    margin-left: .5rem;
+    margin-right: .5rem;
+    background-color: var(--teal);
+  } 
+
+  /* media queries */
+
+  @media screen and (min-width:769px) {
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+    .form-container {
+      width: 696px;
+    }
+    
+  }
+  

@@ -1,1 +1,50 @@
-<p>manual-recipe works!</p>
+<div class="container">
+
+  
+  <form class="form-container">
+    <p class="title">Enter your new recipe</p>
+    <div class="form-group">
+      <!-- <label class="col-2" for="recipeName">Title</label> -->
+      <input class="form-control" id="recipeName" placeholder="Title">
+    </div>
+    <div class="form-group">
+      <!-- <label class="col-2" for="category">Category</label> -->
+      <select class="form-control form-select" id="category">
+        <option>Select a category</option>
+        <option>Breakfast</option>
+        <option>Lunch</option>
+        <option>Dinner</option>
+        <option>Dessert</option>
+        <option>Side Dish</option>
+        <option>Drinks</option>
+        <option>Bread</option>
+        <option>Dog Treats</option>
+        <option>Miscellaneous</option>
+      </select>    
+    </div>
+    <div class="form-group">
+      <!-- <label class="col-2" for="description">Description</label> -->
+      <input class="form-control" id="description" placeholder="Description">
+    </div>
+    <div class="form-group">
+      <!-- <label class="col-2" for="ingredients">Ingredients</label> -->
+      <textarea class="form-control" id="ingredients" placeholder="Ingredients"></textarea>
+    </div>
+    <div class="form-group">
+      <!-- <label class="col-2" for="instructions">Instructions</label> -->
+      <textarea class="form-control" id="instructions" placeholder="Instructions"></textarea>
+    </div>
+    <div class="form-group">
+      <!-- <label class="col-2" for="notes">Notes</label> -->
+      <textarea class="form-control" id="notes" placeholder="Notes"></textarea>
+    </div>
+    <div class="form-group">
+      <!-- <label class="col-2" for="origin">Origin</label> -->
+      <input class="form-control" id="origin" placeholder="Origin">
+    </div>
+    <div class="footer">
+      <button type="save" class="btn btn-primary footer-button">Save Changes</button>
+      <button type="cancel" class="btn btn-primary footer-button" routerLink="/recipe-list">Cancel</button>
+    </div>
+  </form>
+</div>

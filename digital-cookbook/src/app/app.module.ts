@@ -23,12 +23,12 @@ import { ManualRecipeComponent } from './manual-recipe/manual-recipe.component'
   imports: [
     BrowserModule,
     MatButtonModule,
-    NgbModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       {path: 'recipe-list', component: RecipeListComponent},
+      {path: 'manual-recipe', component: ManualRecipeComponent},
       {path: 'home', component: HomepageComponent},
       {path: '', component: HomepageComponent},
       {path: '*', component: HomepageComponent},
@@ -37,6 +37,9 @@ import { ManualRecipeComponent } from './manual-recipe/manual-recipe.component'
     BrowserAnimationsModule,
     HttpClientModule,
     NgbModule,
+    // forRoot suggested in multiple articles, but not showing in ngbModule??
+    // NgbModule.forRoot(),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
