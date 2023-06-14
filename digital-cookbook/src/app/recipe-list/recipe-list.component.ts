@@ -44,6 +44,14 @@ export class RecipeListComponent implements OnInit {
 
   showChooseFileButton() {
     this.showChooseFile = true;
+    this.showURL = false;
   } 
+
+  showURL: boolean = false;
+
+  showURLButton() {
+    this.showURL = true;
+    this.showChooseFile = false;
+  }
 
 }

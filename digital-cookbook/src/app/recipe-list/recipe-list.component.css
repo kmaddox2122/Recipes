@@ -19,15 +19,24 @@
 
 .dropdown-item:hover {
   background-color: rgb(233, 240, 237);
+  cursor: pointer;
 }
 
 .modal .show {
   display: block;
 }
 
-.form-group {
+.URL-container {
   display: flex;
   justify-content: center;
+  margin-top: 2rem;
+}
+
+.choose-file-form-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  padding-left: 5.5rem;
 }
 
 .card {
