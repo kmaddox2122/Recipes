@@ -1,5 +1,5 @@
 import { ManualRecipeComponent } from './../manual-recipe/manual-recipe.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import * as bootstrap from 'bootstrap';
 import { Modal } from 'bootstrap';
 
@@ -18,6 +18,11 @@ export class RecipeListComponent implements OnInit {
   ngOnInit() {
     this.currentWindowWidth = window.innerWidth;
   }
+
+  @HostListener('window:resize')
+    onResize() {
+    this.currentWindowWidth = window.innerWidth
+}
 
   open() {
     //This codeblock negates the dropdown in the nav -- popper.js issue?
