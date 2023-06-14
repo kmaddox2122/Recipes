@@ -2,8 +2,6 @@ import { ManualRecipeComponent } from './../manual-recipe/manual-recipe.componen
 import { Component, OnInit } from '@angular/core';
 import * as bootstrap from 'bootstrap';
 import { Modal } from 'bootstrap';
-import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-list',
@@ -15,33 +13,10 @@ import { tap } from 'rxjs';
 export class RecipeListComponent implements OnInit {
   manualRecipeModal: Modal | undefined;
 
-  Breakpoints = Breakpoints;
-  currentBreakpoint:string = '';
+  public currentWindowWidth!: number;
 
-  readonly breakpoint$ = this.breakpointObserver
-    .observe([Breakpoints.Handset, Breakpoints.HandsetLandscape, Breakpoints.Medium, Breakpoints.XLarge])
-    .pipe(
-      tap(value => console.log(value)),
-      // distinctUntilChanged()
-    );
-
-  constructor(public breakpointObserver: BreakpointObserver) {}
-
-  ngOnInit(): void {
-    this.breakpoint$.subscribe(() =>
-      this.breakpointChanged()
-    );
-  }
-  private breakpointChanged() {
-    if(this.breakpointObserver.isMatched(Breakpoints.Handset)) {
-      this.currentBreakpoint = Breakpoints.Handset;
-    } else if(this.breakpointObserver.isMatched(Breakpoints.HandsetLandscape)) {
-      this.currentBreakpoint = Breakpoints.HandsetLandscape;
-    } else if(this.breakpointObserver.isMatched(Breakpoints.Medium)) {
-      this.currentBreakpoint = Breakpoints.Medium;
-    } else if(this.breakpointObserver.isMatched(Breakpoints.XLarge)) {
-      this.currentBreakpoint = Breakpoints.XLarge;
-    }
+  ngOnInit() {
+    this.currentWindowWidth = window.innerWidth;
   }
 
   open() {
