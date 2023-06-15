@@ -14,7 +14,8 @@
 }
 
 .dropdown-toggle {
-  font-size:medium
+  font-size:large;
+  font-weight: bold;
 }
 
 .dropdown-item:hover {
