@@ -64,9 +64,20 @@
   text-align: center;
 }
 
+.footer {
+  display: flex;
+}
+
 .toggle-button {
-  text-align: center;
+  /* flex: 1; */
   margin-bottom: 1rem;
+  margin-right: 40px;
+  margin-left: 90px;
+}
+
+.delete-icon {
+  /* flex: 1; */
+  cursor:pointer;
 }
 
 .toggle-recipe-button {
