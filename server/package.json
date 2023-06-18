@@ -10,10 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
-    "mongodb": "^5.6.0"
+    "mongodb": "^5.6.0",
+    "mongoose": "^7.3.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
@@ -33,8 +35,12 @@
     "baseUrl": ".",
     "allowJs": true,
     "paths": {
-        "*": ["node_modules/*"]
+      "*": [
+        "node_modules/*"
+      ]
     }
-},
-"include": ["src/**/*"]
+  },
+  "include": [
+    "src/**/*"
+  ]
 }
