@@ -6,44 +6,96 @@ const {mongoose} = require('./db/mongoose');
 
 //load in mongoose models
 const { Recipe } = require('./db/models/recipe.model');
+const { Category } = require('./db/models/category.model');
 
 //load middleware
 app.use(bodyParser.json());
 
-// ROUTE HANDLERS
+// ROUTE HANDLERS FOR CATEGORY
 
-// GET RECIPES
-app.get('/recipes', (req,res) => {
-  //return an array of all the recipes in the database
-  Recipe.find({}).then((recipes) =>
-  res.send(recipes));
+// GET CATEGORIES
+app.get('/category', (req,res) => {
+  //return an array of all the categories in the database
+  Category.find({}).then((category) =>
+  res.send(category));
 })
 
 // EVENTUALLY GET BY ID -- ONCE USERS ARE ADDED
 
-// POST RECIPES
-app.post('/recipes', (req,res) => {
-  //create a new recipe and return it back to the user (will include an id)
+// POST CATEGORIES
+app.post('/category', (req,res) => {
+  //create a new category and return it back to the user (will include an id)
   let name = req.body.name;
 
-  let newRecipe = new Recipe({
+  let newCategory = new Category({
     name
   });
-  newRecipe.save().then((recipeList) => {
-    res.send(recipeList);
+  newCategory.save().then((category) => {
+    res.send(category);
   })
 });
 
-// // PUT/PATCH RECIPES
-// app.patch('/recipes/:id', (req,res => {
-//   // update recipe by id
-// }))
+// PUT/PATCH CATEGORIES
+app.patch('/category/:id', (req,res) => {
+  Category.findOneAndUpdate({ _id: req.params.id }, {
+    $set: req.body
+    }).then(() => {
+      res.sendStatus(200);
+  })
+});
 
 
-// // DELETE RECIPES
-// app.delete('/recipes/:id', (req,res => {
-//   // delete recipe by id
-// }))
+// DELETE CATEGORIES
+app.delete('/category/:id', (req,res) => {
+  Category.findOneAndRemove({
+    _id: req.params.id
+  }).then((removedCategory) => {
+    res.send(removedCategory);
+  })
+});
+
+//ROUTES FOR RECIPE
+
+app.get('/category/:categoryId/recipe', (req, res) => {
+  //return all recipes that belong to a specific collection
+  Recipe.find({
+    _categoryId: req.params.categoryId
+  }).then((recipe) => {
+    res.send(recipe);
+  })
+});
+
+app.post('/category/:categoryId/recipe', (req, res) => {
+  //create a new recipe associated with a specific category by ID
+  let newRecipe = new Recipe({
+    name: req.body.name,
+    _categoryId: req.params.categoryId
+  });
+  newRecipe.save().then((newRecipeDoc) =>
+  res.send(newRecipeDoc))
+});
+
+app.patch('/category/:categoryId/recipe/:recipeId', (req,res) => {
+  // update recipe by id
+  Recipe.findOneAndUpdate({ 
+    _id: req.params.recipeId,
+    _categoryId: req.params.categoryId 
+  }, {
+      $set: req.body
+    }).then(() => {
+      res.sendStatus(200);
+  })
+});
+
+app.delete('/category/:categoryId/recipe/:recipeId', (req,res) => {
+  Recipe.findOneAndRemove({
+    _id: req.params.recipeId,
+    _categoryId: req.params.categoryId
+  }).then((removedRecipe) => {
+    res.send(removedRecipe);
+  })
+});
+
 
 
 app.listen(3000, () => {
