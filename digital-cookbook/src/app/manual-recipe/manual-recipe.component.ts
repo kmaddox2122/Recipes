@@ -1,3 +1,4 @@
+import { RecipeService } from './../recipe.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./manual-recipe.component.css']
 })
 export class ManualRecipeComponent {
+
+  constructor(private recipeService: RecipeService) {
+
+  }
+
+  createNewCategory() {
+    this.recipeService.createCategory('Testing').subscribe((response: any) => {
+      console.log(response);
+    })
+  }
 
 }

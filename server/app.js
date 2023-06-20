@@ -11,6 +11,13 @@ const { Category } = require('./db/models/category.model');
 //load middleware
 app.use(bodyParser.json());
 
+//CORS Middleware
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*"); 
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // ROUTE HANDLERS FOR CATEGORY
 
 // GET CATEGORIES
@@ -55,6 +62,7 @@ app.delete('/category/:id', (req,res) => {
 });
 
 //ROUTES FOR RECIPE
+//TODO: restructure so that a category is not required for each recipe
 
 app.get('/category/:categoryId/recipe', (req, res) => {
   //return all recipes that belong to a specific collection
@@ -64,6 +72,16 @@ app.get('/category/:categoryId/recipe', (req, res) => {
     res.send(recipe);
   })
 });
+
+//GET recipe by ID
+app.get('/category/:categoryId/recipe/recipeId'), (req, res) => {
+  Recipe.findOne({
+    _id: req.params.recipeId,
+    _categoryId: req.params.categoryId
+  }).then((recipe) => {
+    res.send(recipe);
+  })
+}
 
 app.post('/category/:categoryId/recipe', (req, res) => {
   //create a new recipe associated with a specific category by ID
