@@ -12,4 +12,8 @@ export class RecipeService {
     //send a web request to create a category
    return this.webRequestService.post('category', {name});
   }
+
+  getCategory() {
+    return this.webRequestService.get('category');
+  }
 }

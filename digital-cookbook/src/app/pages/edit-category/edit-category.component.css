@@ -1,0 +1,37 @@
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-box {
+  min-height: 200px;
+  width: 100%;
+  max-width: 500px;
+  background: var(--teal);
+  border-radius: 8px;
+  padding: 35px;
+}
+
+.input-group {
+  margin-top: 10px;
+}
+
+.btn {
+  background-color: var(--light-teal);
+  color: black
+}
+
+.btn:hover {
+  color: white
+}
+
+.back-icon {
+  color: white;
+  display: block;
+  float: left;
+  cursor: pointer;
+}

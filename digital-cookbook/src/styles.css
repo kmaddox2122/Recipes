@@ -7,5 +7,6 @@ body { margin: 0;
 }
 
 :root {
---teal: rgb(23, 105, 105)
+--teal: rgb(23, 105, 105);
+--light-teal: rgb(41, 198, 198);
 }

@@ -16,10 +16,11 @@
         <option>Dinner</option>
         <option>Dessert</option>
         <option>Side Dish</option>
-        <option>Drinks</option>
+        <option>Beverages</option>
         <option>Bread</option>
         <option>Dog Treats</option>
         <option>Miscellaneous</option>
+        <option *ngFor="let category of category"> {{category.name}} </option>
       </select>    
     </div>
     <div class="form-group">
@@ -45,7 +46,7 @@
     <div class="footer">
       <button type="save" class="btn btn-primary footer-button">Save Changes</button>
       <button type="cancel" class="btn btn-primary footer-button" routerLink="/recipe-list">Cancel</button>
-      <button type="newCategory" class="btn btn-primary footer-button" (click)="createNewCategory()">New Category</button>
+      <button type="newCategory" class="btn btn-primary footer-button" routerLink="/new-category">Edit Categories</button>
     </div>
   </form>
 </div>

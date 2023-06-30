@@ -11,14 +11,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ManualRecipeComponent } from './manual-recipe/manual-recipe.component'
+import { ManualRecipeComponent } from './manual-recipe/manual-recipe.component';
+import { EditCategoryComponent } from './pages/edit-category/edit-category.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeListComponent,
     HomepageComponent,
-    ManualRecipeComponent
+    ManualRecipeComponent,
+    EditCategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,8 @@ import { ManualRecipeComponent } from './manual-recipe/manual-recipe.component'
       {path: 'recipe-list', component: RecipeListComponent},
       {path: 'manual-recipe', component: ManualRecipeComponent},
       {path: 'home', component: HomepageComponent},
+      {path: 'new-category', component: EditCategoryComponent},
+      {path: 'category/:categoryId', component: ManualRecipeComponent},
       {path: '', component: HomepageComponent},
       {path: '*', component: HomepageComponent},
       
