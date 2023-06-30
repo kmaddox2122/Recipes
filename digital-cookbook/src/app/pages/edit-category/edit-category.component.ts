@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { RecipeService } from 'src/app/recipe.service';
 
 @Component({
@@ -6,13 +6,12 @@ import { RecipeService } from 'src/app/recipe.service';
   templateUrl: './edit-category.component.html',
   styleUrls: ['./edit-category.component.css']
 })
-export class EditCategoryComponent {
+export class EditCategoryComponent implements OnInit{
 
   //todo: create model for category type
   category!: any[];
 
   constructor(private recipeService: RecipeService) {
-
   }
 
   createNewCategory(name:string) {
@@ -20,11 +19,17 @@ export class EditCategoryComponent {
       console.log(response);
       //now navigate to /category/response._id
     })
+  }
 
+  // public trackItem (index: number, category: any) {
+  //   return category.name;
+  // }
+
+  ngOnInit(): void {
     this.recipeService.getCategory().subscribe((category: any) => {
       console.log("new category page", category);
       this.category = category;
     })
-
   }
+
 }
