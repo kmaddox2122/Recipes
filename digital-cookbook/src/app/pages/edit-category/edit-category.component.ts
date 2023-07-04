@@ -9,12 +9,14 @@ import { RecipeService } from 'src/app/recipe.service';
 export class EditCategoryComponent implements OnInit{
 
   //todo: create model for category type
-  category!: any[];
+  public category: any[] = [];
 
   constructor(private recipeService: RecipeService) {
   }
 
   createNewCategory(name:string) {
+    console.log(this);
+    this.category.push({ name: name});
     this.recipeService.createCategory(name).subscribe((response: any) => {
       console.log(response);
       //now navigate to /category/response._id
