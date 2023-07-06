@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .modal-box {
@@ -14,6 +14,17 @@
   background: var(--teal);
   border-radius: 8px;
   padding: 35px;
+  margin-top: 10rem;
+}
+
+.categories-box {
+  min-height: 200px;
+  width: 100%;
+  max-width: 500px;
+  background: var(--teal);
+  border-radius: 8px;
+  padding: 35px;
+  margin-top: 7rem;
 }
 
 .input-group {

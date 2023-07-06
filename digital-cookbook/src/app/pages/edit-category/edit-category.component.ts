@@ -15,17 +15,10 @@ export class EditCategoryComponent implements OnInit{
   }
 
   createNewCategory(name:string) {
-    console.log(this);
     this.category.push({ name: name});
     this.recipeService.createCategory(name).subscribe((response: any) => {
-      console.log(response);
-      //now navigate to /category/response._id
     })
   }
-
-  // public trackItem (index: number, category: any) {
-  //   return category.name;
-  // }
 
   ngOnInit(): void {
     this.recipeService.getCategory().subscribe((category: any) => {
