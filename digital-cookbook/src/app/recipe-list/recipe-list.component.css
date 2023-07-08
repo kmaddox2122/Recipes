@@ -40,9 +40,15 @@
   padding-left: 5.5rem;
 }
 
+.card-collection {
+  display: flex;
+  justify-content: center;
+}
+
 .card {
   padding-top: 1rem;
-  margin: auto;
+  margin-right: 10px;
+  margin-left: 10px;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
