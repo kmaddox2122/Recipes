@@ -43,19 +43,19 @@
 .card-collection {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .card {
   padding-top: 1rem;
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin:2rem 10px 1rem 10px;
+  min-width: 18rem;
 }
 
 .card-img-top {
   width: 200px;
   margin: auto;
+  border-radius: 7px;
 }
 
 .card-title {
@@ -114,5 +114,4 @@
     font-size: 3.84rem;
   }
 }
-
 
