@@ -12,14 +12,33 @@ export class ManualRecipeComponent implements OnInit {
     //todo: create model for category type
   category!: any[];
 
-  constructor(private recipeService: RecipeService, private route: ActivatedRoute) {}
+    //TODO: create a model for recipe type
+    public recipe: any;
+    
+    constructor(private recipeService: RecipeService, private route: ActivatedRoute) {}
+    
+
+    // 7/26/23 this method crashes back-end server.
+    createNewRecipe() {
+      this.recipeService.createRecipe('test recipe').subscribe((response: any) => {
+      console.log(response);
+      })
+    }
+    // createNewRecipe(name:string) {
+    //   this.recipe.push({name: name});
+    //   this.recipeService.createRecipe(name).subscribe((response: any) => {
+    //   })
+    // }
 
   ngOnInit() {
     this.route.params.subscribe(
       (params: Params) => {
         console.log(params);
-      }
-    )
+      })
+      this.recipeService.getRecipe().subscribe((recipe: any) => {
+        console.log("New recipe", recipe);
+        this.recipe = recipe;
+      })
     
     this.recipeService.getCategory().subscribe((category: any) => {
       console.log("manual recipe page", category);

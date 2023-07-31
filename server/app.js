@@ -83,6 +83,18 @@ app.get('/category/:categoryId/recipe/recipeId'), (req, res) => {
   })
 }
 
+// app.post('/recipe', (req, res) => {
+//   //create a new recipe associated with a specific category by ID
+//   // let newRecipe = new Recipe({
+//   //   name: req.body.name,
+//   // });
+//     let name = req.body.name;
+//     let newRecipe = new Recipe({
+//       name
+//     })
+//   newRecipe.save().then((newRecipeDoc) =>
+//   res.send(newRecipeDoc))
+// });
 app.post('/category/:categoryId/recipe', (req, res) => {
   //create a new recipe associated with a specific category by ID
   let newRecipe = new Recipe({
